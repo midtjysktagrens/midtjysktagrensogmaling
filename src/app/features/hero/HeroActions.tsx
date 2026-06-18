@@ -5,17 +5,23 @@ type HeroActionsProps = {
 
 export function HeroActions({ primary, secondary }: HeroActionsProps) {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-nowrap gap-4">
       {primary && (
-        <button className="bg-blue-500 text-white px-8 py-3 rounded font-semibold hover:bg-blue-600 transition">
+        <a
+          href={primary.link}
+          className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold whitespace-nowrap hover:bg-blue-600 transition"
+        >
           {primary.text}
-        </button>
+        </a>
       )}
 
       {secondary && (
-        <button className="bg-white text-gray-900 px-8 py-3 rounded font-semibold hover:bg-gray-100 transition">
+        <a
+          href={secondary.link}
+          className="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold whitespace-nowrap hover:bg-gray-100 transition"
+        >
           {secondary.text}
-        </button>
+        </a>
       )}
     </div>
   );
