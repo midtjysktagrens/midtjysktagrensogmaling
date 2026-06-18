@@ -9,7 +9,7 @@ export default async function Navbar() {
   if (!navbar) return null;
 
   return (
-    <header className="relative z-50 bg-[#2A384B]">
+    <header className="sticky top-0 z-50 bg-[#2A384B]">
       <nav className="flex items-center justify-between gap-8 px-6 lg:px-12 py-4 max-w-7xl mx-auto">
         <a href="/" className="flex items-center gap-3 shrink-0">
           {navbar.logo?.asset?.url && (
