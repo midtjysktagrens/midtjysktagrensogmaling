@@ -1,5 +1,5 @@
-import { Hero } from "./features/hero";
-import { Kpi } from "./features/kpi";
+import { Hero } from "../features/hero";
+import { Kpi } from "../features/kpi";
 
 export default function Home() {
   return (
