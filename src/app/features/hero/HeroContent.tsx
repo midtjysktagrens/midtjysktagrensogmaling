@@ -13,19 +13,23 @@ type HeroContentProps = {
 
 export function HeroContent({ hero }: HeroContentProps) {
   return (
-    <div>
-      <h1>{hero.headline}</h1>
+    <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/40 flex items-center">
+      <div className="w-1/2 text-white px-12 py-12">
+        <h1 className="text-5xl font-bold leading-tight mb-6">
+          {hero.headline}
+        </h1>
 
-      <p>{hero.subheading}</p>
+        <p className="text-lg mb-8 leading-relaxed">{hero.subheading}</p>
 
-      {hero.features && <HeroChecklist items={hero.features} />}
+        {hero.features && <HeroChecklist items={hero.features} />}
 
-      {(hero.primaryButton || hero.secondaryButton) && (
-        <HeroActions
-          primary={hero.primaryButton}
-          secondary={hero.secondaryButton}
-        />
-      )}
+        {(hero.primaryButton || hero.secondaryButton) && (
+          <HeroActions
+            primary={hero.primaryButton}
+            secondary={hero.secondaryButton}
+          />
+        )}
+      </div>
     </div>
   );
 }

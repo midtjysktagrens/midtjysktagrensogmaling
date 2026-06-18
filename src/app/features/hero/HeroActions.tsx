@@ -5,15 +5,15 @@ type HeroActionsProps = {
 
 export function HeroActions({ primary, secondary }: HeroActionsProps) {
   return (
-    <div>
+    <div className="flex gap-4">
       {primary && (
-        <button className="bg-primary text-white px-4 py-2 rounded">
+        <button className="bg-blue-500 text-white px-8 py-3 rounded font-semibold hover:bg-blue-600 transition">
           {primary.text}
         </button>
       )}
 
       {secondary && (
-        <button className="bg-transparent border border-secondary text-secondary px-4 py-2 rounded">
+        <button className="bg-white text-gray-900 px-8 py-3 rounded font-semibold hover:bg-gray-100 transition">
           {secondary.text}
         </button>
       )}

@@ -12,5 +12,13 @@ export function HeroBackground({ image }: HeroBackgroundProps) {
     return null;
   }
 
-  return <Image src={image.asset.url} alt={image.alt ?? ""} fill priority />;
+  return (
+    <Image
+      src={image.asset.url}
+      alt={image.alt ?? ""}
+      fill
+      priority
+      className="object-cover"
+    />
+  );
 }

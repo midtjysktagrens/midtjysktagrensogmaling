@@ -6,10 +6,14 @@ export default async function Hero() {
   const hero = await getHero();
 
   return (
-    <section>
-      <HeroBackground image={hero.backgroundImage} />
+    <section className="relative min-h-screen w-full overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <HeroBackground image={hero.backgroundImage} />
+      </div>
 
-      <HeroContent hero={hero} />
+      <div className="absolute inset-0 z-10">
+        <HeroContent hero={hero} />
+      </div>
     </section>
   );
 }
