@@ -9,7 +9,7 @@ export function HeroActions({ primary, secondary }: HeroActionsProps) {
       {primary && (
         <a
           href={primary.link}
-          className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold whitespace-nowrap hover:bg-blue-600 transition"
+          className="bg-[#4C80C2] text-white px-8 py-4 rounded-lg font-semibold whitespace-nowrap hover:bg-blue-600 transition"
         >
           {primary.text}
         </a>
