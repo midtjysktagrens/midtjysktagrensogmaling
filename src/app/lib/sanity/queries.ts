@@ -1,4 +1,5 @@
 import { client } from "@/app/studio/lib/client";
+import type { KpiSectionData } from "@/types/kpi";
 import type { NavbarData } from "@/types/navbar";
 
 export async function getHero() {
@@ -41,6 +42,24 @@ export async function getNavbar(): Promise<NavbarData | null> {
     phoneNumber,
     phoneLink,
     ctaButton
+  }`;
+
+  return await client.fetch(query);
+}
+
+export async function getKpiSection(): Promise<KpiSectionData | null> {
+  const query = `*[_type == "kpiSection"][0]{
+    items[]{
+      _key,
+      title,
+      description,
+      icon{
+        asset->{
+          url
+        }
+      },
+      fallbackIcon
+    }
   }`;
 
   return await client.fetch(query);
