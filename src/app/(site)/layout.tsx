@@ -1,3 +1,4 @@
+import { Footer } from "../features/footer";
 import { Navbar } from "../features/navbar";
 
 export default function SiteLayout({
@@ -9,6 +10,7 @@ export default function SiteLayout({
     <>
       <Navbar />
       {children}
+      <Footer />
     </>
   );
 }

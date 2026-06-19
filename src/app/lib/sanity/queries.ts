@@ -1,6 +1,7 @@
 import { client } from "@/app/studio/lib/client";
 import type { BeforeAfterSectionData } from "@/types/beforeAfter";
 import type { CasesSectionData } from "@/types/cases";
+import type { FooterData } from "@/types/footer";
 import type { KpiSectionData } from "@/types/kpi";
 import type { NavbarData } from "@/types/navbar";
 import type { ProcessSectionData } from "@/types/process";
@@ -145,6 +146,59 @@ export async function getCasesSection(): Promise<CasesSectionData | null> {
       },
       facts,
       testimonial
+    }
+  }`;
+
+  return await client.fetch(query);
+}
+
+export async function getFooter(): Promise<FooterData | null> {
+  const query = `*[_type == "footer"][0]{
+    ctaHeadline,
+    ctaSubheading,
+    ctaNote,
+    ctaChecklist,
+    ctaImage{
+      asset->{
+        url
+      }
+    },
+    ctaPrimaryButton,
+    ctaSecondaryButton,
+    logo{
+      asset->{
+        url
+      },
+      alt
+    },
+    description,
+    socialLinks[]{
+      _key,
+      platform,
+      link
+    },
+    servicesColumnTitle,
+    servicesLinks[]{
+      _key,
+      label,
+      link
+    },
+    shortcutsColumnTitle,
+    shortcutsLinks[]{
+      _key,
+      label,
+      link
+    },
+    contactColumnTitle,
+    phoneNumber,
+    phoneLink,
+    email,
+    address,
+    copyrightText,
+    legalLinks[]{
+      _key,
+      label,
+      link
     }
   }`;
 
