@@ -1,8 +1,9 @@
-import type { AnchorHTMLAttributes } from "react";
+import Link from "next/link";
+import type { ComponentProps } from "react";
 
 type ButtonVariant = "primary" | "secondary";
 
-type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type ButtonProps = ComponentProps<typeof Link> & {
   variant?: ButtonVariant;
 };
 
@@ -19,12 +20,12 @@ export function Button({
   ...props
 }: ButtonProps) {
   return (
-    <a
+    <Link
       href={href}
       className={`inline-flex items-center justify-center font-semibold whitespace-nowrap transition ${variantClasses[variant]} ${className ?? ""}`}
       {...props}
     >
       {children}
-    </a>
+    </Link>
   );
 }
