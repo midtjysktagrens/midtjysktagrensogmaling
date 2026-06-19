@@ -1,4 +1,5 @@
 import { client } from "@/app/studio/lib/client";
+import type { BeforeAfterSectionData } from "@/types/beforeAfter";
 import type { KpiSectionData } from "@/types/kpi";
 import type { NavbarData } from "@/types/navbar";
 import type { ProcessSectionData } from "@/types/process";
@@ -101,6 +102,29 @@ export async function getProcessSection(): Promise<ProcessSectionData | null> {
       },
       iconName
     }
+  }`;
+
+  return await client.fetch(query);
+}
+
+export async function getBeforeAfterSection(): Promise<BeforeAfterSectionData | null> {
+  const query = `*[_type == "beforeAfterSection"][0]{
+    sectionTitle,
+    items[]{
+      _key,
+      label,
+      beforeImage{
+        asset->{
+          url
+        }
+      },
+      afterImage{
+        asset->{
+          url
+        }
+      }
+    },
+    button
   }`;
 
   return await client.fetch(query);
