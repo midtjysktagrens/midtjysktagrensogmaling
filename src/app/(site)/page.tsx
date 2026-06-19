@@ -1,5 +1,6 @@
 import { Hero } from "../features/hero";
 import { Kpi } from "../features/kpi";
+import { Process } from "../features/process";
 import { Services } from "../features/services";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Kpi />
       <Services />
+      <Process />
     </div>
   );
 }

@@ -1,0 +1,50 @@
+import Image from "next/image";
+import { Camera, CalendarCheck, CheckCircle2, FileCheck } from "lucide-react";
+import type { ProcessIconName, ProcessStepData } from "@/types/process";
+
+const presetIcons: Record<ProcessIconName, typeof Camera> = {
+  camera: Camera,
+  checkCircle: CheckCircle2,
+  fileCheck: FileCheck,
+  calendarCheck: CalendarCheck,
+};
+
+type ProcessStepProps = ProcessStepData & {
+  step: number;
+};
+
+export function ProcessStep({
+  step,
+  icon,
+  iconName,
+  title,
+  description,
+}: ProcessStepProps) {
+  const PresetIcon = iconName ? presetIcons[iconName] : Camera;
+
+  return (
+    <div className="bg-[#2A384B] rounded-xl p-6 text-center flex flex-col items-center h-full flex-1 min-w-50 max-w-64">
+      <span className="self-start text-white font-bold text-lg">{step}</span>
+
+      {icon?.asset?.url ? (
+        <Image
+          src={icon.asset.url}
+          alt=""
+          width={56}
+          height={56}
+          className="w-14 h-14 -mt-2"
+        />
+      ) : (
+        <PresetIcon className="w-14 h-14 text-white -mt-2" strokeWidth={1.5} />
+      )}
+
+      <h3 className="text-white font-semibold text-lg mt-4 min-h-14 flex items-center">
+        {title}
+      </h3>
+
+      {description && (
+        <p className="text-white/60 text-sm mt-2">{description}</p>
+      )}
+    </div>
+  );
+}
