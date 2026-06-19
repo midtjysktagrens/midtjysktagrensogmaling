@@ -1,6 +1,7 @@
 import { client } from "@/app/studio/lib/client";
 import type { KpiSectionData } from "@/types/kpi";
 import type { NavbarData } from "@/types/navbar";
+import type { ServicesSectionData } from "@/types/services";
 
 export async function getHero() {
   const query = `*[_type == "hero"][0]{
@@ -59,6 +60,25 @@ export async function getKpiSection(): Promise<KpiSectionData | null> {
         }
       },
       fallbackIcon
+    }
+  }`;
+
+  return await client.fetch(query);
+}
+
+export async function getServicesSection(): Promise<ServicesSectionData | null> {
+  const query = `*[_type == "servicesSection"][0]{
+    sectionTitle,
+    cards[]{
+      _key,
+      title,
+      description,
+      icon{
+        asset->{
+          url
+        }
+      },
+      button
     }
   }`;
 

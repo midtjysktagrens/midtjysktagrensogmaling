@@ -1,5 +1,6 @@
 import { hero } from "./hero";
 import { kpiSection } from "./kpi";
 import { navbar } from "./navbar";
+import { servicesSection } from "./services";
 
-export const schemaTypes = [hero, navbar, kpiSection];
+export const schemaTypes = [hero, navbar, kpiSection, servicesSection];
