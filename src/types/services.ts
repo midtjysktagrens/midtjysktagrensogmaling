@@ -1,3 +1,10 @@
+export type ServiceIconName =
+  | "paintRoller"
+  | "tiles"
+  | "pin"
+  | "hammer"
+  | "fileSignature";
+
 export interface ServiceCardData {
   _key: string;
   title: string;
@@ -5,6 +12,7 @@ export interface ServiceCardData {
   icon?: {
     asset?: { url: string };
   };
+  iconName?: ServiceIconName;
   button?: {
     text: string;
     link: string;

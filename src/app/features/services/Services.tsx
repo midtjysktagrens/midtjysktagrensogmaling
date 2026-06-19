@@ -1,3 +1,4 @@
+import { Heading } from "@/app/global/components/Heading";
 import { getServicesSection } from "@/app/lib/sanity/queries";
 import { ServiceCard } from "./ServiceCard";
 
@@ -10,9 +11,9 @@ export default async function Services() {
     <section className="bg-gray-200 py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-6">
         {services.sectionTitle && (
-          <h2 className="text-[#2A384B] text-3xl font-extrabold uppercase tracking-tight text-center mb-12">
+          <Heading size="md" className="text-center mb-12">
             {services.sectionTitle}
-          </h2>
+          </Heading>
         )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">

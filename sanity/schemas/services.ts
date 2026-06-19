@@ -22,9 +22,28 @@ export const servicesSection = defineType({
           fields: [
             defineField({
               name: "icon",
-              title: "Icon (SVG)",
+              title: "Custom Icon (SVG)",
               type: "image",
               options: { accept: "image/svg+xml" },
+              description:
+                "Optional. Upload your own SVG icon. Takes priority over the preset icon below.",
+            }),
+            defineField({
+              name: "iconName",
+              title: "Preset Icon",
+              type: "string",
+              description:
+                "Used when no custom icon is uploaded above.",
+              options: {
+                list: [
+                  { title: "Roof cleaning & painting", value: "paintRoller" },
+                  { title: "Tile cleaning & impregnation", value: "tiles" },
+                  { title: "Pin (location)", value: "pin" },
+                  { title: "Roof replacement", value: "hammer" },
+                  { title: "Facade renovation", value: "fileSignature" },
+                ],
+              },
+              initialValue: "pin",
             }),
             defineField({ name: "title", title: "Title", type: "string" }),
             defineField({

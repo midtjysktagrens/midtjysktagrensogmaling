@@ -1,14 +1,32 @@
 import Image from "next/image";
-import { Wrench } from "lucide-react";
+import {
+  FileSignature,
+  Grid2x2,
+  Hammer,
+  MapPin,
+  PaintRoller,
+  Wrench,
+} from "lucide-react";
 import { Button } from "@/app/global/components/Button";
-import type { ServiceCardData } from "@/types/services";
+import type { ServiceCardData, ServiceIconName } from "@/types/services";
+
+const presetIcons: Record<ServiceIconName, typeof Wrench> = {
+  paintRoller: PaintRoller,
+  tiles: Grid2x2,
+  pin: MapPin,
+  hammer: Hammer,
+  fileSignature: FileSignature,
+};
 
 export function ServiceCard({
   icon,
+  iconName,
   title,
   description,
   button,
 }: ServiceCardData) {
+  const PresetIcon = iconName ? presetIcons[iconName] : Wrench;
+
   return (
     <div className="bg-[#2A384B] rounded-xl p-6 text-center flex flex-col items-center h-full">
       {icon?.asset?.url ? (
@@ -20,7 +38,7 @@ export function ServiceCard({
           className="w-14 h-14"
         />
       ) : (
-        <Wrench className="w-14 h-14 text-white" strokeWidth={1.5} />
+        <PresetIcon className="w-14 h-14 text-white" strokeWidth={1.5} />
       )}
 
       <h3 className="text-white font-semibold text-lg mt-4 min-h-14 flex items-center">

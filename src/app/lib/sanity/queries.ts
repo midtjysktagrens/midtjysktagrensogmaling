@@ -78,6 +78,7 @@ export async function getServicesSection(): Promise<ServicesSectionData | null> 
           url
         }
       },
+      iconName,
       button
     }
   }`;
