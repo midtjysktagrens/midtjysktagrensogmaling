@@ -1,3 +1,5 @@
+import { Button } from "@/app/global/components/Button";
+
 type HeroActionsProps = {
   primary?: { text: string; link: string };
   secondary?: { text: string; link: string };
@@ -7,21 +9,15 @@ export function HeroActions({ primary, secondary }: HeroActionsProps) {
   return (
     <div className="flex flex-nowrap gap-4">
       {primary && (
-        <a
-          href={primary.link}
-          className="bg-[#4C80C2] text-white px-8 py-4 rounded-lg font-semibold whitespace-nowrap hover:bg-blue-600 transition"
-        >
+        <Button href={primary.link} variant="primary" className="px-8 py-4 rounded-lg">
           {primary.text}
-        </a>
+        </Button>
       )}
 
       {secondary && (
-        <a
-          href={secondary.link}
-          className="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold whitespace-nowrap hover:bg-gray-100 transition"
-        >
+        <Button href={secondary.link} variant="secondary" className="px-8 py-4 rounded-lg">
           {secondary.text}
-        </a>
+        </Button>
       )}
     </div>
   );

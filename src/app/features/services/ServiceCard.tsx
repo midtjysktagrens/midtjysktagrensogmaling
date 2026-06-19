@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Wrench } from "lucide-react";
+import { Button } from "@/app/global/components/Button";
 import type { ServiceCardData } from "@/types/services";
 
 export function ServiceCard({
@@ -33,12 +34,13 @@ export function ServiceCard({
       </div>
 
       {button?.text && (
-        <a
+        <Button
           href={button.link ?? "#"}
-          className="bg-[#4C80C2] hover:bg-blue-600 text-white px-6 py-2 rounded-md font-semibold transition mt-6"
+          variant="primary"
+          className="px-6 py-2 rounded-md mt-6"
         >
           {button.text}
-        </a>
+        </Button>
       )}
     </div>
   );
