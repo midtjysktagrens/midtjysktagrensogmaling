@@ -1,4 +1,5 @@
 import { beforeAfterSection } from "./beforeAfter";
+import { casesSection } from "./cases";
 import { hero } from "./hero";
 import { kpiSection } from "./kpi";
 import { navbar } from "./navbar";
@@ -12,4 +13,5 @@ export const schemaTypes = [
   servicesSection,
   processSection,
   beforeAfterSection,
+  casesSection,
 ];

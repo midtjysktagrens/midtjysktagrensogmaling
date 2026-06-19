@@ -1,5 +1,6 @@
 import { client } from "@/app/studio/lib/client";
 import type { BeforeAfterSectionData } from "@/types/beforeAfter";
+import type { CasesSectionData } from "@/types/cases";
 import type { KpiSectionData } from "@/types/kpi";
 import type { NavbarData } from "@/types/navbar";
 import type { ProcessSectionData } from "@/types/process";
@@ -125,6 +126,26 @@ export async function getBeforeAfterSection(): Promise<BeforeAfterSectionData | 
       }
     },
     button
+  }`;
+
+  return await client.fetch(query);
+}
+
+export async function getCasesSection(): Promise<CasesSectionData | null> {
+  const query = `*[_type == "casesSection"][0]{
+    sectionTitle,
+    cases[]{
+      _key,
+      title,
+      category,
+      image{
+        asset->{
+          url
+        }
+      },
+      facts,
+      testimonial
+    }
   }`;
 
   return await client.fetch(query);

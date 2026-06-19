@@ -1,4 +1,5 @@
 import { BeforeAfter } from "../features/before-after";
+import { Cases } from "../features/cases";
 import { Hero } from "../features/hero";
 import { Kpi } from "../features/kpi";
 import { Process } from "../features/process";
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <Process />
       <BeforeAfter />
+      <Cases />
     </div>
   );
 }

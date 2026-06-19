@@ -23,3 +23,54 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+/* Case gallery: the default case's detail panel stays open until another
+   case is hovered, at which point that one opens instead (!important wins
+   the specificity fight against the "close the default" rule below). The
+   open card's own flex-grow is boosted too, so it actually claims enough
+   row width for image + panel instead of overflowing into the next card. */
+.case-gallery .case-card {
+  transition: flex-grow 400ms ease;
+}
+
+.case-gallery .case-details {
+  width: 0;
+  margin-left: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 400ms ease, margin-left 400ms ease, opacity 300ms ease;
+}
+
+.case-gallery .case-card[data-default="true"] {
+  flex-grow: 5;
+}
+
+.case-gallery .case-card[data-default="true"] .case-details {
+  width: 16rem;
+  margin-left: 1.5rem;
+  opacity: 1;
+  white-space: normal;
+}
+
+.case-gallery:hover .case-card[data-default="true"] {
+  flex-grow: 1;
+}
+
+.case-gallery:hover .case-card[data-default="true"] .case-details {
+  width: 0;
+  margin-left: 0;
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.case-gallery .case-card:hover {
+  flex-grow: 5 !important;
+}
+
+.case-gallery .case-card:hover .case-details {
+  width: 16rem !important;
+  margin-left: 1.5rem !important;
+  opacity: 1 !important;
+  white-space: normal !important;
+}
