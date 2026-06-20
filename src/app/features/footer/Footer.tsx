@@ -1,34 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { SiFacebook, SiInstagram } from "@icons-pack/react-simple-icons";
 import { getFooter } from "@/app/lib/sanity/queries";
 import { FooterCtaBanner } from "./FooterCtaBanner";
 
 const socialIcons: Record<string, React.ReactNode> = {
-  facebook: (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      className="w-4 h-4"
-    >
-      <path d="M14 9h-2a2 2 0 0 0-2 2v2H8v3h2v6h3v-6h2.5l.5-3H13v-1.5a1 1 0 0 1 1-1H15V9z" />
-    </svg>
-  ),
-  instagram: (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      className="w-4 h-4"
-    >
-      <rect x="4" y="4" width="16" height="16" rx="4" />
-      <circle cx="12" cy="12" r="3.5" />
-      <circle cx="17" cy="7" r="0.6" fill="currentColor" />
-    </svg>
-  ),
+  facebook: <SiFacebook className="w-4 h-4" />,
+  instagram: <SiInstagram className="w-4 h-4" />,
 };
 
 export default async function Footer() {
