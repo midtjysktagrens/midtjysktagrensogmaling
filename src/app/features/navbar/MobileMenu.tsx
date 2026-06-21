@@ -1,8 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Equal, Mail, Phone, X } from "lucide-react";
 import { Button } from "@/app/global/components/Button";
 import type { NavbarData } from "@/types/navbar";
+
+function closeMenu() {
+  const checkbox = document.getElementById(
+    "mobile-menu-toggle",
+  ) as HTMLInputElement | null;
+
+  if (checkbox) checkbox.checked = false;
+}
 
 export function MobileMenu({ navbar }: { navbar: NavbarData }) {
   return (
@@ -44,6 +54,7 @@ export function MobileMenu({ navbar }: { navbar: NavbarData }) {
               <Link
                 key={item._key}
                 href={item.link ?? "#"}
+                onClick={closeMenu}
                 className="block py-4 border-b border-gray-200 text-[#2A384B] font-medium"
               >
                 {item.label}
@@ -72,6 +83,7 @@ export function MobileMenu({ navbar }: { navbar: NavbarData }) {
                     <Link
                       key={dropdownItem._key}
                       href={dropdownItem.link ?? "#"}
+                      onClick={closeMenu}
                       className="text-gray-500 text-sm pl-1"
                     >
                       {dropdownItem.label}
@@ -86,6 +98,7 @@ export function MobileMenu({ navbar }: { navbar: NavbarData }) {
         {navbar.ctaButton?.text && (
           <Button
             href={navbar.ctaButton.link ?? "#"}
+            onClick={closeMenu}
             variant="primary"
             className="w-full mt-6 py-3 rounded-lg uppercase tracking-wide text-sm"
           >
@@ -121,6 +134,7 @@ export function MobileMenu({ navbar }: { navbar: NavbarData }) {
             {navbar.contactPerson.email && (
               <Link
                 href={`mailto:${navbar.contactPerson.email}`}
+                onClick={closeMenu}
                 className="flex items-center gap-2 bg-gray-100 rounded-lg px-4 py-3 text-[#2A384B] text-sm mb-3"
               >
                 <Mail className="w-4 h-4 shrink-0" />
@@ -131,6 +145,7 @@ export function MobileMenu({ navbar }: { navbar: NavbarData }) {
             {navbar.contactPerson.phone && (
               <Link
                 href={`tel:${navbar.contactPerson.phone}`}
+                onClick={closeMenu}
                 className="flex items-center gap-2 bg-gray-100 rounded-lg px-4 py-3 text-[#2A384B] text-sm font-semibold"
               >
                 <Phone className="w-4 h-4 shrink-0" />
