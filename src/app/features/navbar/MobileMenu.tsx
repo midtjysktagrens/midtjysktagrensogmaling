@@ -33,7 +33,7 @@ export function MobileMenu({ navbar }: { navbar: NavbarData }) {
       />
 
       {/* Bottom sheet */}
-      <div className="fixed inset-x-0 bottom-0 z-40 max-h-[80vh] overflow-y-auto rounded-t-2xl bg-white px-6 pt-3 pb-8 translate-y-full pointer-events-none transition-transform duration-300 ease-out peer-checked:translate-y-0 peer-checked:pointer-events-auto">
+      <div className="fixed inset-x-0 bottom-0 z-40 h-[88vh] overflow-y-auto rounded-t-2xl bg-white px-6 pt-3 pb-8 translate-y-full pointer-events-none transition-transform duration-300 ease-out peer-checked:translate-y-0 peer-checked:pointer-events-auto">
         <div className="w-10 h-1.5 bg-gray-300 rounded-full mx-auto mb-6" />
 
         {navbar.navItems?.map((item) => {
