@@ -28,7 +28,7 @@ export function ServiceCard({
   const PresetIcon = iconName ? presetIcons[iconName] : Wrench;
 
   return (
-    <div className="bg-[#2A384B] rounded-xl p-6 text-center flex flex-col items-center h-full">
+    <div className="bg-[#2A384B] rounded-xl p-6 text-center flex flex-col items-center h-full snap-center shrink-0 w-[85%] sm:w-auto">
       {icon?.asset?.url ? (
         <Image
           src={icon.asset.url}

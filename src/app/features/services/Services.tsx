@@ -16,7 +16,7 @@ export default async function Services() {
           </Heading>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="no-scrollbar flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6 pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-5 sm:overflow-visible sm:snap-none sm:mx-0 sm:px-0 sm:pb-0">
           {services.cards.map((card) => (
             <ServiceCard key={card._key} {...card} />
           ))}

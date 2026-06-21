@@ -24,6 +24,16 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Hides the scrollbar on mobile slider sections (e.g. Services cards) while
+   keeping the element scrollable via touch swipe / mouse drag. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Case gallery hover-accordion: desktop/tablet only (sm and up). On mobile
    there's no hover, so cases instead render as a simple always-expanded
    stack via plain Tailwind classes on CaseCard - see Cases.tsx/CaseCard.tsx. */
