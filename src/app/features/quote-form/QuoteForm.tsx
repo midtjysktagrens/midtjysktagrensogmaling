@@ -1,47 +1,82 @@
 import { ChevronDown } from "lucide-react";
 import { getServicesSection } from "@/app/lib/sanity/queries";
 
-export default async function QuoteForm() {
+type QuoteFormSize = "sm" | "md" | "lg";
+
+const sizeClasses: Record<
+  QuoteFormSize,
+  { card: string; title: string; gap: string; input: string }
+> = {
+  sm: {
+    card: "max-w-[320px] p-5",
+    title: "text-base mb-3",
+    gap: "gap-2",
+    input: "px-3 py-2.5",
+  },
+  md: {
+    card: "max-w-[420px] p-6",
+    title: "text-lg mb-4",
+    gap: "gap-3",
+    input: "px-4 py-3",
+  },
+  lg: {
+    card: "max-w-[560px] p-8",
+    title: "text-xl mb-5",
+    gap: "gap-4",
+    input: "px-5 py-3.5",
+  },
+};
+
+type QuoteFormProps = {
+  size?: QuoteFormSize;
+};
+
+export default async function QuoteForm({ size = "md" }: QuoteFormProps) {
   const services = await getServicesSection();
+  const sizing = sizeClasses[size];
+
+  const inputClass = `border border-gray-300 rounded-md ${sizing.input} text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4C80C2]`;
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-[420px] text-gray-900">
-      <h2 className="text-lg font-bold mb-4">Bestil et gratis tilbud</h2>
+    <div
+      className={`bg-white rounded-xl shadow-2xl w-full text-gray-900 ${sizing.card}`}
+    >
+      <h2 className={`font-bold ${sizing.title}`}>Bestil et gratis tilbud</h2>
 
-      <form className="flex flex-col gap-3">
+      <form className={`flex flex-col ${sizing.gap}`}>
         <input
           type="text"
           name="name"
           placeholder="Navn"
-          className="border border-gray-300 rounded-md px-4 py-3 text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4C80C2]"
+          className={inputClass}
         />
 
         <input
           type="text"
           name="address"
           placeholder="Adresse"
-          className="border border-gray-300 rounded-md px-4 py-3 text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4C80C2]"
+          className={inputClass}
         />
 
         <input
           type="tel"
           name="phone"
           placeholder="Telefon"
-          className="border border-gray-300 rounded-md px-4 py-3 text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4C80C2]"
+          className={inputClass}
         />
 
         <input
           type="email"
           name="email"
           placeholder="E-mail"
-          className="border border-gray-300 rounded-md px-4 py-3 text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4C80C2]"
+          className={inputClass}
         />
 
         <div className="relative">
           <select
             name="service"
             defaultValue=""
-            className="w-full appearance-none border border-gray-300 rounded-md px-4 py-3 pr-10 text-base text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#4C80C2]"
+            className={`w-full appearance-none ${inputClass} pr-10 text-gray-500`}
           >
             <option value="" disabled>
               Vælg ydelse
