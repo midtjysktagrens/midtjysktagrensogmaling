@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Equal, Mail, Phone, X } from "lucide-react";
 import { Button } from "@/app/global/components/Button";
 import type { NavbarData } from "@/types/navbar";
+import type { ReactNode } from "react";
 
 function closeMenu() {
   const checkbox = document.getElementById(
@@ -14,7 +15,13 @@ function closeMenu() {
   if (checkbox) checkbox.checked = false;
 }
 
-export function MobileMenu({ navbar }: { navbar: NavbarData }) {
+export function MobileMenu({
+  navbar,
+  quoteForm,
+}: {
+  navbar: NavbarData;
+  quoteForm?: ReactNode;
+}) {
   return (
     <div className="lg:hidden relative">
       <input type="checkbox" id="mobile-menu-toggle" className="peer hidden" />
@@ -154,6 +161,7 @@ export function MobileMenu({ navbar }: { navbar: NavbarData }) {
             )}
           </div>
         )}
+        {quoteForm && <div className="mt-6">{quoteForm}</div>}
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ export function HeroContent({ hero }: HeroContentProps) {
           )}
         </div>
 
-        <div className="hidden lg:block shrink-0">
+        <div className="hidden lg:block shrink-0 w-[420px]">
           <QuoteForm />
         </div>
       </div>

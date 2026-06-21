@@ -4,7 +4,7 @@ export default async function QuoteForm() {
   const services = await getServicesSection();
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl p-6 w-[420px] text-gray-900">
+    <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-[420px] text-gray-900">
       <h2 className="text-lg font-bold mb-4">Bestil et gratis tilbud</h2>
 
       <form className="flex flex-col gap-3">
