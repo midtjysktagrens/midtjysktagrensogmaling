@@ -8,11 +8,15 @@ export type ServiceIconName =
 export interface ServiceCardData {
   _key: string;
   title: string;
+  slug?: { current: string };
   description?: string;
   icon?: {
     asset?: { url: string };
   };
   iconName?: ServiceIconName;
+  heroImage?: {
+    asset?: { url: string };
+  };
   button?: {
     text: string;
     link: string;

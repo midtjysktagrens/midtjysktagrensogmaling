@@ -22,6 +22,7 @@ export function ServiceCard({
   icon,
   iconName,
   title,
+  slug,
   description,
   button,
 }: ServiceCardData) {
@@ -53,7 +54,7 @@ export function ServiceCard({
 
       {button?.text && (
         <Button
-          href={button.link ?? "#"}
+          href={slug?.current ? `/ydelser/${slug.current}` : button.link ?? "#"}
           variant="primary"
           className="px-6 py-2 rounded-md mt-6"
         >

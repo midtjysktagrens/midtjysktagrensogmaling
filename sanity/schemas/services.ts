@@ -47,9 +47,39 @@ export const servicesSection = defineType({
             }),
             defineField({ name: "title", title: "Title", type: "string" }),
             defineField({
+              name: "slug",
+              title: "Slug",
+              type: "slug",
+              description:
+                "Click \"Generate\" - don't type this by hand. Used for the service's own page at /ydelser/[slug]; the card's button links there automatically when set.",
+              options: {
+                source: "title",
+                slugify: (input: string) =>
+                  input
+                    .toLowerCase()
+                    .replace(/&/g, "og")
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-+|-+$/g, ""),
+              },
+              validation: (Rule) =>
+                Rule.custom((value) => {
+                  if (!value?.current) return true;
+                  return /^[a-z0-9]+(-[a-z0-9]+)*$/.test(value.current)
+                    ? true
+                    : "Use only lowercase letters, numbers, and hyphens - click \"Generate\" instead of typing this.";
+                }),
+            }),
+            defineField({
               name: "description",
               title: "Description",
               type: "text",
+            }),
+            defineField({
+              name: "heroImage",
+              title: "Page Background Image",
+              description: "Used as the background on the service's own page.",
+              type: "image",
+              options: { hotspot: true },
             }),
             defineField({
               name: "button",

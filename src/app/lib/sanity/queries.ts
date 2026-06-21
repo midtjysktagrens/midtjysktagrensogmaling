@@ -5,7 +5,7 @@ import type { FooterData } from "@/types/footer";
 import type { KpiSectionData } from "@/types/kpi";
 import type { NavbarData } from "@/types/navbar";
 import type { ProcessSectionData } from "@/types/process";
-import type { ServicesSectionData } from "@/types/services";
+import type { ServiceCardData, ServicesSectionData } from "@/types/services";
 
 export async function getHero() {
   const query = `*[_type == "hero"][0]{
@@ -87,6 +87,7 @@ export async function getServicesSection(): Promise<ServicesSectionData | null> 
     cards[]{
       _key,
       title,
+      slug,
       description,
       icon{
         asset->{
@@ -99,6 +100,37 @@ export async function getServicesSection(): Promise<ServicesSectionData | null> 
   }`;
 
   return await client.fetch(query);
+}
+
+export async function getServiceSlugs(): Promise<string[]> {
+  const query = `*[_type == "servicesSection"][0].cards[defined(slug.current)].slug.current`;
+
+  return (await client.fetch(query)) ?? [];
+}
+
+export async function getServiceBySlug(
+  slug: string,
+): Promise<ServiceCardData | null> {
+  const query = `*[_type == "servicesSection"][0].cards[slug.current == $slug][0]{
+    _key,
+    title,
+    slug,
+    description,
+    icon{
+      asset->{
+        url
+      }
+    },
+    iconName,
+    heroImage{
+      asset->{
+        url
+      }
+    },
+    button
+  }`;
+
+  return await client.fetch(query, { slug });
 }
 
 export async function getProcessSection(): Promise<ProcessSectionData | null> {
