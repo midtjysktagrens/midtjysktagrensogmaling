@@ -12,9 +12,9 @@ type HeadingProps = {
 };
 
 const sizeClasses: Record<HeadingSize, string> = {
-  sm: "text-xl",
-  md: "text-3xl",
-  lg: "text-5xl",
+  sm: "text-base sm:text-xl",
+  md: "text-2xl sm:text-3xl",
+  lg: "text-3xl sm:text-5xl",
 };
 
 const colorClasses: Record<HeadingColor, string> = {
