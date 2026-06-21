@@ -24,6 +24,14 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Locks background scroll while the mobile menu sheet is open. Without this,
+   scrolling the page behind the sheet drags the sticky header (and its close
+   button) out of view - especially on iOS Safari, where the address bar
+   showing/hiding shifts the layout on scroll. */
+body:has(#mobile-menu-toggle:checked) {
+  overflow: hidden;
+}
+
 /* Hides the scrollbar on mobile slider sections (e.g. Services cards) while
    keeping the element scrollable via touch swipe / mouse drag. */
 .no-scrollbar {
