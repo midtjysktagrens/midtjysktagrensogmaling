@@ -17,9 +17,9 @@ export function CaseCard({
   return (
     <div
       data-default={defaultOpen || undefined}
-      className="case-card flex flex-1 min-w-32 h-72"
+      className="case-card flex flex-col sm:flex-row flex-1 min-w-32 sm:h-72"
     >
-      <div className="relative flex-1 min-w-32 h-full rounded-lg overflow-hidden">
+      <div className="relative w-full h-48 sm:flex-1 sm:min-w-32 sm:h-full rounded-lg overflow-hidden">
         {image?.asset?.url && (
           <Image
             src={image.asset.url}
@@ -30,7 +30,7 @@ export function CaseCard({
         )}
       </div>
 
-      <div className="case-details flex flex-col shrink-0 h-full overflow-y-auto overflow-x-hidden">
+      <div className="case-details flex flex-col w-full mt-4 sm:mt-0 sm:shrink-0 sm:h-full sm:overflow-y-auto sm:overflow-x-hidden">
         {title && (
           <h3 className="text-[#2A384B] font-semibold text-lg">{title}</h3>
         )}

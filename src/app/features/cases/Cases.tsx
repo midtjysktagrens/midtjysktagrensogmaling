@@ -16,7 +16,7 @@ export default async function Cases() {
           </Heading>
         )}
 
-        <div className="case-gallery flex flex-wrap items-start gap-6">
+        <div className="case-gallery flex flex-col sm:flex-row sm:flex-wrap items-start gap-6">
           {cases.cases.map((item, index) => (
             <CaseCard key={item._key} {...item} defaultOpen={index === 0} />
           ))}
