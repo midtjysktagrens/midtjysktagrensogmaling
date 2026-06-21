@@ -1,6 +1,7 @@
 import { client } from "@/app/studio/lib/client";
 import type { BeforeAfterSectionData } from "@/types/beforeAfter";
 import type { CasesSectionData } from "@/types/cases";
+import type { ContactPageData } from "@/types/contactPage";
 import type { FooterData } from "@/types/footer";
 import type { HeroData } from "@/types/hero";
 import type { KpiSectionData } from "@/types/kpi";
@@ -243,6 +244,25 @@ export async function getFooter(): Promise<FooterData | null> {
       _key,
       label,
       link
+    }
+  }`;
+
+  return await client.fetch(query);
+}
+
+export async function getContactPage(): Promise<ContactPageData | null> {
+  const query = `*[_type == "contactPage"][0]{
+    heading,
+    subheading,
+    phoneNumber,
+    phoneLink,
+    email,
+    address,
+    openingHoursTitle,
+    openingHours[]{
+      _key,
+      label,
+      value
     }
   }`;
 
