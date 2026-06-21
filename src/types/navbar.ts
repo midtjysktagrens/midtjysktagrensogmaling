@@ -24,4 +24,13 @@ export interface NavbarData {
     text: string;
     link: string;
   };
+  contactPerson?: {
+    name?: string;
+    title?: string;
+    avatar?: {
+      asset?: { url: string };
+    };
+    email?: string;
+    phone?: string;
+  };
 }

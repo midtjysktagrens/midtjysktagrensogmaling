@@ -46,7 +46,18 @@ export async function getNavbar(): Promise<NavbarData | null> {
     },
     phoneNumber,
     phoneLink,
-    ctaButton
+    ctaButton,
+    contactPerson{
+      name,
+      title,
+      avatar{
+        asset->{
+          url
+        }
+      },
+      email,
+      phone
+    }
   }`;
 
   return await client.fetch(query);

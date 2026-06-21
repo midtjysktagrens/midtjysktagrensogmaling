@@ -87,6 +87,24 @@ export const navbar = defineType({
         defineField({ name: "link", title: "Link", type: "string" }),
       ],
     }),
+    defineField({
+      name: "contactPerson",
+      title: "Contact Person",
+      description: "Shown in the contact card at the bottom of the mobile menu.",
+      type: "object",
+      fields: [
+        defineField({ name: "name", title: "Name", type: "string" }),
+        defineField({ name: "title", title: "Title", type: "string" }),
+        defineField({
+          name: "avatar",
+          title: "Avatar",
+          type: "image",
+          options: { hotspot: true },
+        }),
+        defineField({ name: "email", title: "Email", type: "string" }),
+        defineField({ name: "phone", title: "Phone", type: "string" }),
+      ],
+    }),
   ],
   preview: {
     select: { title: "siteName" },

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phone } from "lucide-react";
 import { Button } from "@/app/global/components/Button";
 import { getNavbar } from "@/app/lib/sanity/queries";
+import { MobileMenu } from "./MobileMenu";
 import { NavLink } from "./NavLink";
 
 export default async function Navbar() {
@@ -60,6 +61,8 @@ export default async function Navbar() {
             </Button>
           )}
         </div>
+
+        <MobileMenu navbar={navbar} />
       </nav>
     </header>
   );
