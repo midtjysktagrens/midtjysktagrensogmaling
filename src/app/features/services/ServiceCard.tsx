@@ -46,9 +46,11 @@ export function ServiceCard({
         {title}
       </h3>
 
-      <div className="flex-1 w-full">
+      <div className="flex-1 w-full min-h-15">
         {description && (
-          <p className="text-white/60 text-sm mt-2">{description}</p>
+          <p className="text-white/60 text-sm mt-2 line-clamp-3">
+            {description}
+          </p>
         )}
       </div>
 

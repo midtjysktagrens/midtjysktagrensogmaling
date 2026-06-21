@@ -1,15 +1,10 @@
 import { QuoteForm } from "@/app/features/quote-form";
+import type { HeroData } from "@/types/hero";
 import { HeroActions } from "./HeroActions";
 import { HeroChecklist } from "./HeroChecklist";
 
 type HeroContentProps = {
-  hero: {
-    headline: string;
-    subheading: string;
-    features?: Array<{ _key: string; title: string }>;
-    primaryButton?: { text: string; link: string };
-    secondaryButton?: { text: string; link: string };
-  };
+  hero: HeroData;
 };
 
 export function HeroContent({ hero }: HeroContentProps) {

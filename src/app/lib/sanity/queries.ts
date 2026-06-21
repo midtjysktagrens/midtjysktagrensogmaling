@@ -2,12 +2,13 @@ import { client } from "@/app/studio/lib/client";
 import type { BeforeAfterSectionData } from "@/types/beforeAfter";
 import type { CasesSectionData } from "@/types/cases";
 import type { FooterData } from "@/types/footer";
+import type { HeroData } from "@/types/hero";
 import type { KpiSectionData } from "@/types/kpi";
 import type { NavbarData } from "@/types/navbar";
 import type { ProcessSectionData } from "@/types/process";
 import type { ServiceCardData, ServicesSectionData } from "@/types/services";
 
-export async function getHero() {
+export async function getHero(): Promise<HeroData> {
   const query = `*[_type == "hero"][0]{
     headline,
     subheading,
