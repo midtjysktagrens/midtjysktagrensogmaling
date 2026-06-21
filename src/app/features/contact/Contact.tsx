@@ -12,7 +12,7 @@ export default async function Contact() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <ContactInfo {...contact} />
 
-        <div className="p-6 sm:p-10">
+        <div className="sm:p-10">
           <QuoteForm size="lg" />
         </div>
       </div>
