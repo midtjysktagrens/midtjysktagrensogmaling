@@ -27,7 +27,7 @@ export function ServiceHero({
   const PresetIcon = iconName ? presetIcons[iconName] : Wrench;
 
   return (
-    <section className="relative min-h-[60vh] w-full overflow-hidden flex items-center">
+    <section className="relative min-h-[85vh] w-full overflow-hidden flex items-center">
       {heroImage?.asset?.url && (
         <Image
           src={heroImage.asset.url}
@@ -40,7 +40,7 @@ export function ServiceHero({
 
       <div className="absolute inset-0 bg-linear-to-r from-[#2A384B]/90 via-[#2A384B]/70 to-[#2A384B]/40" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 text-white">
+      <div className="relative z-10 w-full max-w-2xl px-6 sm:px-12 lg:px-20 text-white">
         {icon?.asset?.url ? (
           <Image
             src={icon.asset.url}
