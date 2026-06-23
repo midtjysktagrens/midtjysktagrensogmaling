@@ -29,7 +29,7 @@ export async function getHero(): Promise<HeroData> {
     secondaryButton
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { tags: ["hero"] } });
 }
 
 export async function getNavbar(): Promise<NavbarData | null> {
@@ -67,7 +67,7 @@ export async function getNavbar(): Promise<NavbarData | null> {
     }
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { tags: ["navbar"] } });
 }
 
 export async function getKpiSection(): Promise<KpiSectionData | null> {
@@ -85,7 +85,7 @@ export async function getKpiSection(): Promise<KpiSectionData | null> {
     }
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { tags: ["kpiSection"] } });
 }
 
 export async function getServicesSection(): Promise<ServicesSectionData | null> {
@@ -106,13 +106,15 @@ export async function getServicesSection(): Promise<ServicesSectionData | null> 
     }
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { tags: ["servicesSection"] } });
 }
 
 export async function getServiceSlugs(): Promise<string[]> {
   const query = `*[_type == "servicesSection"][0].cards[defined(slug.current)].slug.current`;
 
-  return (await client.fetch(query)) ?? [];
+  return (
+    (await client.fetch(query, {}, { next: { tags: ["servicesSection"] } })) ?? []
+  );
 }
 
 export async function getServiceBySlug(
@@ -142,7 +144,11 @@ export async function getServiceBySlug(
     button
   }`;
 
-  return await client.fetch(query, { slug });
+  return await client.fetch(
+    query,
+    { slug },
+    { next: { tags: ["servicesSection"] } },
+  );
 }
 
 export async function getProcessSection(): Promise<ProcessSectionData | null> {
@@ -161,7 +167,7 @@ export async function getProcessSection(): Promise<ProcessSectionData | null> {
     }
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { tags: ["processSection"] } });
 }
 
 export async function getBeforeAfterSection(): Promise<BeforeAfterSectionData | null> {
@@ -184,7 +190,11 @@ export async function getBeforeAfterSection(): Promise<BeforeAfterSectionData | 
     button
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(
+    query,
+    {},
+    { next: { tags: ["beforeAfterSection"] } },
+  );
 }
 
 export async function getCasesSection(): Promise<CasesSectionData | null> {
@@ -204,7 +214,7 @@ export async function getCasesSection(): Promise<CasesSectionData | null> {
     }
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { tags: ["casesSection"] } });
 }
 
 export async function getFooter(): Promise<FooterData | null> {
@@ -257,7 +267,7 @@ export async function getFooter(): Promise<FooterData | null> {
     }
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { tags: ["footer"] } });
 }
 
 export async function getContactPage(): Promise<ContactPageData | null> {
@@ -276,5 +286,5 @@ export async function getContactPage(): Promise<ContactPageData | null> {
     }
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { tags: ["contactPage"] } });
 }
