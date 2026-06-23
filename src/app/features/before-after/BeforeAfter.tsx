@@ -2,6 +2,7 @@ import { Heading } from "@/app/global/components/Heading";
 import { Button } from "@/app/global/components/Button";
 import { getBeforeAfterSection } from "@/app/lib/sanity/queries";
 import { BeforeAfterCard } from "./BeforeAfterCard";
+import { BeforeAfterSlider } from "./BeforeAfterSlider";
 
 export default async function BeforeAfter() {
   const beforeAfter = await getBeforeAfterSection();
@@ -17,11 +18,15 @@ export default async function BeforeAfter() {
           </Heading>
         )}
 
-        <div className="flex flex-wrap items-start justify-center gap-8">
-          {beforeAfter.items.map((item) => (
-            <BeforeAfterCard key={item._key} {...item} />
-          ))}
-        </div>
+        {beforeAfter.items.length > 3 ? (
+          <BeforeAfterSlider items={beforeAfter.items} />
+        ) : (
+          <div className="flex flex-wrap items-start justify-center gap-8">
+            {beforeAfter.items.map((item) => (
+              <BeforeAfterCard key={item._key} {...item} />
+            ))}
+          </div>
+        )}
 
         {beforeAfter.button?.text && (
           <Button
