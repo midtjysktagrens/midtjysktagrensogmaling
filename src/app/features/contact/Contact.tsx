@@ -1,7 +1,7 @@
 import { QuoteForm } from "@/app/features/quote-form";
 import { getContactPage } from "@/app/lib/sanity/queries";
 import { ContactInfo } from "./ContactInfo";
-
+//quick test
 export default async function Contact() {
   const contact = await getContactPage();
 
