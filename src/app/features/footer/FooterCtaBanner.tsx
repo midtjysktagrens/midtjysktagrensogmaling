@@ -17,21 +17,28 @@ export function FooterCtaBanner({
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           {ctaHeadline && (
-            <h2 className="text-white text-3xl font-extrabold mb-4">
+            <h2 className="text-white text-3xl 2xl:text-4xl font-extrabold mb-4">
               {ctaHeadline}
             </h2>
           )}
 
-          {ctaSubheading && <p className="text-white/80">{ctaSubheading}</p>}
+          {ctaSubheading && (
+            <p className="text-white/80 2xl:text-lg">{ctaSubheading}</p>
+          )}
 
-          {ctaNote && <p className="text-white/80 mb-8">{ctaNote}</p>}
+          {ctaNote && (
+            <p className="text-white/80 2xl:text-lg mb-8">{ctaNote}</p>
+          )}
 
           {ctaChecklist && ctaChecklist.length > 0 && (
             <ul className="space-y-4 mb-8">
               {ctaChecklist.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-white">
-                  <span className="w-7 h-7 rounded-full bg-white text-[#4C80C2] flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4" strokeWidth={3} />
+                <li
+                  key={item}
+                  className="flex items-center gap-3 text-white 2xl:text-lg"
+                >
+                  <span className="w-7 h-7 2xl:w-8 2xl:h-8 rounded-full bg-white text-[#4C80C2] flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 2xl:w-5 2xl:h-5" strokeWidth={3} />
                   </span>
                   {item}
                 </li>

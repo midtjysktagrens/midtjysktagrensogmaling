@@ -15,13 +15,13 @@ export function ContactInfo({
   return (
     <div>
       {heading && (
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-[#2A384B] mb-4">
+        <h1 className="text-3xl sm:text-4xl 2xl:text-5xl font-extrabold text-[#2A384B] mb-4">
           {heading}
         </h1>
       )}
 
       {subheading && (
-        <p className="text-lg font-semibold text-[#2A384B] mb-8">
+        <p className="text-lg 2xl:text-xl font-semibold text-[#2A384B] mb-8">
           {subheading}
         </p>
       )}
@@ -30,9 +30,9 @@ export function ContactInfo({
         {phoneNumber && (
           <Link
             href={phoneLink ?? `tel:${phoneNumber}`}
-            className="flex items-center gap-3 text-[#2A384B] font-medium"
+            className="flex items-center gap-3 text-[#2A384B] font-medium 2xl:text-lg"
           >
-            <Phone className="w-5 h-5 text-[#4C80C2] shrink-0" />
+            <Phone className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#4C80C2] shrink-0" />
             {phoneNumber}
           </Link>
         )}
@@ -40,23 +40,23 @@ export function ContactInfo({
         {email && (
           <Link
             href={`mailto:${email}`}
-            className="flex items-center gap-3 text-[#2A384B] font-medium"
+            className="flex items-center gap-3 text-[#2A384B] font-medium 2xl:text-lg"
           >
-            <Mail className="w-5 h-5 text-[#4C80C2] shrink-0" />
+            <Mail className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#4C80C2] shrink-0" />
             {email}
           </Link>
         )}
 
         {address && (
-          <div className="flex items-center gap-3 text-[#2A384B] font-medium">
-            <MapPin className="w-5 h-5 text-[#4C80C2] shrink-0" />
+          <div className="flex items-center gap-3 text-[#2A384B] font-medium 2xl:text-lg">
+            <MapPin className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#4C80C2] shrink-0" />
             {address}
           </div>
         )}
       </div>
 
       {openingHoursTitle && (
-        <h2 className="text-xl font-bold text-[#2A384B] mb-3">
+        <h2 className="text-xl 2xl:text-2xl font-bold text-[#2A384B] mb-3">
           {openingHoursTitle}
         </h2>
       )}
@@ -64,7 +64,7 @@ export function ContactInfo({
       {openingHours && openingHours.length > 0 && (
         <div className="flex flex-col gap-1 mb-10">
           {openingHours.map((row) => (
-            <p key={row._key} className="text-[#2A384B]">
+            <p key={row._key} className="text-[#2A384B] 2xl:text-lg">
               {row.label}
               {row.value ? ` ${row.value}` : ""}
             </p>

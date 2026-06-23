@@ -14,16 +14,16 @@ const sizeClasses: Record<
     input: "px-3 py-2.5",
   },
   md: {
-    card: "max-w-[420px] p-6",
-    title: "text-lg mb-4",
+    card: "max-w-[420px] 2xl:max-w-120 p-6 2xl:p-8",
+    title: "text-lg 2xl:text-xl mb-4",
     gap: "gap-3",
-    input: "px-4 py-3",
+    input: "px-4 py-3 2xl:py-3.5",
   },
   lg: {
-    card: "max-w-[560px] p-8",
-    title: "text-xl mb-5",
+    card: "max-w-[560px] 2xl:max-w-[640px] p-8 2xl:p-10",
+    title: "text-xl 2xl:text-2xl mb-5",
     gap: "gap-4",
-    input: "px-5 py-3.5",
+    input: "px-5 py-3.5 2xl:py-4",
   },
 };
 

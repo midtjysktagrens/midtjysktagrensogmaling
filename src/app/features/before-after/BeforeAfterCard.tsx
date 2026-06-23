@@ -42,7 +42,9 @@ export function BeforeAfterCard({
         </span>
       </div>
 
-      <p className="text-white font-medium text-sm text-center">{label}</p>
+      <p className="text-white font-medium text-sm 2xl:text-base text-center">
+        {label}
+      </p>
     </div>
   );
 }

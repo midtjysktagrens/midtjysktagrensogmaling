@@ -97,3 +97,14 @@ body:has(#mobile-menu-toggle:checked) {
     white-space: normal !important;
   }
 }
+
+/* Same case-gallery accordion as above, just wider on large monitors. */
+@media (min-width: 1536px) {
+  .case-gallery .case-card[data-default="true"] .case-details {
+    width: 20rem;
+  }
+
+  .case-gallery .case-card:hover .case-details {
+    width: 20rem !important;
+  }
+}

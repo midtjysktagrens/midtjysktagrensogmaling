@@ -24,8 +24,8 @@ export default async function Process() {
               <ProcessStep {...step} step={index + 1} />
 
               {index < process.steps!.length - 1 && (
-                <div className="hidden lg:flex items-center justify-center pt-16 shrink-0">
-                  <ArrowRight className="w-6 h-6 text-gray-400" />
+                <div className="hidden lg:flex items-center justify-center pt-16 2xl:pt-20 shrink-0">
+                  <ArrowRight className="w-6 h-6 2xl:w-8 2xl:h-8 text-gray-400" />
                 </div>
               )}
             </Fragment>
