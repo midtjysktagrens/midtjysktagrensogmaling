@@ -14,7 +14,7 @@ export function FooterCtaBanner({
 }: FooterData) {
   return (
     <section className="bg-[#132238] py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           {ctaHeadline && (
             <h2 className="text-white text-3xl font-extrabold mb-4">

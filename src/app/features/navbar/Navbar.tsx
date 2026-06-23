@@ -14,7 +14,7 @@ export default async function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-[#2A384B]">
-      <nav className="flex items-center justify-between gap-8 px-6 lg:px-12 py-4 max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between gap-8 px-6 lg:px-12 py-4 max-w-7xl 2xl:max-w-[1600px] mx-auto">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           {navbar.logo?.asset?.url && (
             <Image

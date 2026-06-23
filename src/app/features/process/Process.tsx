@@ -11,7 +11,7 @@ export default async function Process() {
 
   return (
     <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12">
         {process.sectionTitle && (
           <Heading size="md" className="text-center mb-12">
             {process.sectionTitle}

@@ -20,7 +20,7 @@ export default async function Footer() {
       <FooterCtaBanner {...footer} />
 
       <div className="bg-[#132238] pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 pb-12">
             <div>
               {footer.logo?.asset?.url && (

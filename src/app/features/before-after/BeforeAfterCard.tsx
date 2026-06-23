@@ -7,7 +7,7 @@ export function BeforeAfterCard({
   afterImage,
 }: BeforeAfterItemData) {
   return (
-    <div className="flex flex-col items-center gap-3 flex-1 min-w-64 max-w-96">
+    <div className="flex flex-col items-center gap-3 flex-1 min-w-64 max-w-96 2xl:max-w-md">
       <div className="group relative w-full aspect-4/5 rounded-lg overflow-hidden ring-1 ring-white/10 cursor-default sm:cursor-pointer shadow-lg shadow-black/20 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 hover:ring-[#4C80C2]/60 flex sm:block">
         <div className="relative w-1/2 h-full sm:absolute sm:inset-0 sm:w-full">
           {beforeImage?.asset?.url && (

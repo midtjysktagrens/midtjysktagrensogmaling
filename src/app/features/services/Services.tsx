@@ -9,7 +9,7 @@ export default async function Services() {
 
   return (
     <section className="bg-gray-200 py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-6">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-6">
         {services.sectionTitle && (
           <Heading size="md" className="text-center mb-12">
             {services.sectionTitle}

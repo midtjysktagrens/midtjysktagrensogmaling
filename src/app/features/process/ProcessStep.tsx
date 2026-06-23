@@ -23,7 +23,7 @@ export function ProcessStep({
   const PresetIcon = iconName ? presetIcons[iconName] : Camera;
 
   return (
-    <div className="bg-[#2A384B] rounded-xl p-6 text-center flex flex-col items-center h-full w-full sm:flex-1 sm:w-auto sm:min-w-50 sm:max-w-64">
+    <div className="bg-[#2A384B] rounded-xl p-6 text-center flex flex-col items-center h-full w-full sm:flex-1 sm:w-auto sm:min-w-50 sm:max-w-64 2xl:max-w-80">
       <span className="self-start text-white font-bold text-lg">{step}</span>
 
       {icon?.asset?.url ? (
