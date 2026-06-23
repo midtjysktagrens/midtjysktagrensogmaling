@@ -17,6 +17,9 @@ export interface ServiceCardData {
   heroImage?: {
     asset?: { url: string };
   };
+  heroMobileImage?: {
+    asset?: { url: string };
+  };
   button?: {
     text: string;
     link: string;

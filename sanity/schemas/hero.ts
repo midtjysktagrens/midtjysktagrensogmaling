@@ -24,6 +24,16 @@ export const hero = defineType({
       },
     }),
     defineField({
+      name: "mobileBackgroundImage",
+      title: "Mobile Background Image",
+      description:
+        "Optional. Shown on mobile instead of the background image above. If left empty, the background image above is used on mobile too.",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: "features",
       title: "Features Checklist",
       type: "array",

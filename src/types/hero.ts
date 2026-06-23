@@ -10,6 +10,9 @@ export interface HeroData {
     asset?: { url: string };
     alt?: string;
   };
+  mobileBackgroundImage?: {
+    asset?: { url: string };
+  };
   features?: HeroFeature[];
   primaryButton?: {
     text: string;

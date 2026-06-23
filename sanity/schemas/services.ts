@@ -82,6 +82,14 @@ export const servicesSection = defineType({
               options: { hotspot: true },
             }),
             defineField({
+              name: "heroMobileImage",
+              title: "Page Background Image (Mobile)",
+              description:
+                "Optional. Shown on mobile instead of the background image above. If left empty, the background image above is used on mobile too.",
+              type: "image",
+              options: { hotspot: true },
+            }),
+            defineField({
               name: "button",
               title: "Button",
               type: "object",

@@ -5,20 +5,40 @@ type HeroBackgroundProps = {
     asset?: { url: string };
     alt?: string;
   };
+  mobileImage?: {
+    asset?: { url: string };
+  };
 };
 
-export function HeroBackground({ image }: HeroBackgroundProps) {
-  if (!image?.asset?.url) {
+export function HeroBackground({ image, mobileImage }: HeroBackgroundProps) {
+  const desktopUrl = image?.asset?.url;
+  const mobileUrl = mobileImage?.asset?.url ?? desktopUrl;
+
+  if (!desktopUrl && !mobileUrl) {
     return null;
   }
 
   return (
-    <Image
-      src={image.asset.url}
-      alt={image.alt ?? ""}
-      fill
-      priority
-      className="object-cover"
-    />
+    <>
+      {mobileUrl && (
+        <Image
+          src={mobileUrl}
+          alt={image?.alt ?? ""}
+          fill
+          priority
+          className="object-cover sm:hidden"
+        />
+      )}
+
+      {desktopUrl && (
+        <Image
+          src={desktopUrl}
+          alt={image?.alt ?? ""}
+          fill
+          priority
+          className="object-cover hidden sm:block"
+        />
+      )}
+    </>
   );
 }

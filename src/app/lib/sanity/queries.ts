@@ -19,6 +19,11 @@ export async function getHero(): Promise<HeroData> {
       },
       alt
     },
+    mobileBackgroundImage{
+      asset->{
+        url
+      }
+    },
     features,
     primaryButton,
     secondaryButton
@@ -125,6 +130,11 @@ export async function getServiceBySlug(
     },
     iconName,
     heroImage{
+      asset->{
+        url
+      }
+    },
+    heroMobileImage{
       asset->{
         url
       }

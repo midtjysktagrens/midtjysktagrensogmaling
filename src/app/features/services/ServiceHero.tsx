@@ -23,18 +23,31 @@ export function ServiceHero({
   title,
   description,
   heroImage,
+  heroMobileImage,
 }: ServiceCardData) {
   const PresetIcon = iconName ? presetIcons[iconName] : Wrench;
+  const desktopUrl = heroImage?.asset?.url;
+  const mobileUrl = heroMobileImage?.asset?.url ?? desktopUrl;
 
   return (
     <section className="relative min-h-[85vh] w-full overflow-hidden flex items-center">
-      {heroImage?.asset?.url && (
+      {mobileUrl && (
         <Image
-          src={heroImage.asset.url}
+          src={mobileUrl}
           alt=""
           fill
           priority
-          className="object-cover"
+          className="object-cover sm:hidden"
+        />
+      )}
+
+      {desktopUrl && (
+        <Image
+          src={desktopUrl}
+          alt=""
+          fill
+          priority
+          className="object-cover hidden sm:block"
         />
       )}
 

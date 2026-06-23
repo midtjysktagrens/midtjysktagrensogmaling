@@ -8,7 +8,10 @@ export default async function Hero() {
   return (
     <section className="relative min-h-[85vh] w-full overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <HeroBackground image={hero.backgroundImage} />
+        <HeroBackground
+          image={hero.backgroundImage}
+          mobileImage={hero.mobileBackgroundImage}
+        />
       </div>
 
       <div className="absolute inset-0 z-10">
