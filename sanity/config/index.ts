@@ -6,7 +6,7 @@ import { schemaTypes } from "../schemas";
 
 export default defineConfig({
   name: "default",
-  title: "skave tag og facade",
+  title: "Midtjysk Tagrens & Maling",
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "",
