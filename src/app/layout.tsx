@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Midtjysk Tagrens & Maling",
   description:
-    "Midtjys Tagrens & Maling er en dansk virksomhed, der specialiserer sig i tag- og facadearbejde. Vi tilbyder professionelle løsninger til både private og erhvervskunder, herunder tagrenovering, facaderenovering og vedligeholdelse.",
+    "Midtjysk Tagrens & Maling er en dansk virksomhed, der specialiserer sig i tag- og facadearbejde. Vi tilbyder professionelle løsninger til både private og erhvervskunder, herunder tagrenovering, facaderenovering og vedligeholdelse.",
 };
 
 export default function RootLayout({
