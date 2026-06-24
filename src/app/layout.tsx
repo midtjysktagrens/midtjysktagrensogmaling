@@ -8,9 +8,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Skave tag og facader",
+  title: "Midtjysk Tagrens & Maling",
   description:
-    "Skave tag og facader er en dansk virksomhed, der specialiserer sig i tag- og facadearbejde. Vi tilbyder professionelle løsninger til både private og erhvervskunder, herunder tagrenovering, facaderenovering og vedligeholdelse.",
+    "Midtjys Tagrens & Maling er en dansk virksomhed, der specialiserer sig i tag- og facadearbejde. Vi tilbyder professionelle løsninger til både private og erhvervskunder, herunder tagrenovering, facaderenovering og vedligeholdelse.",
 };
 
 export default function RootLayout({
