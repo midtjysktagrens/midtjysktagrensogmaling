@@ -4,6 +4,7 @@ import {
   ServiceBenefits,
   ServiceComparison,
   ServiceHero,
+  ServiceProcess,
 } from "../../../features/services";
 
 export async function generateStaticParams() {
@@ -28,6 +29,7 @@ export default async function ServicePage({ params }: Props) {
       <ServiceHero {...service} />
       <ServiceBenefits {...service} />
       <ServiceComparison {...service} />
+      <ServiceProcess {...service} />
     </div>
   );
 }

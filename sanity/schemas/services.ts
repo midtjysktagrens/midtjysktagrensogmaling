@@ -198,6 +198,72 @@ export const servicesSection = defineType({
                 }),
               ],
             }),
+            defineField({
+              name: "processTitle",
+              title: "Process Title",
+              description:
+                "Title for the process section on the service's own page.",
+              type: "string",
+            }),
+            defineField({
+              name: "processSteps",
+              title: "Process Steps",
+              type: "array",
+              of: [
+                defineArrayMember({
+                  type: "object",
+                  name: "serviceProcessStep",
+                  title: "Process Step",
+                  fields: [
+                    defineField({
+                      name: "icon",
+                      title: "Custom Icon (SVG)",
+                      type: "image",
+                      options: { accept: "image/svg+xml" },
+                      description:
+                        "Optional. Upload your own SVG icon. Takes priority over the preset icon below.",
+                    }),
+                    defineField({
+                      name: "iconName",
+                      title: "Preset Icon",
+                      type: "string",
+                      description: "Used when no custom icon is uploaded above.",
+                      options: {
+                        list: [
+                          { title: "Camera (contact/photos)", value: "camera" },
+                          { title: "Check Circle (assessment)", value: "checkCircle" },
+                          { title: "File Check (offer/contract)", value: "fileCheck" },
+                          { title: "Calendar Check (scheduling/work)", value: "calendarCheck" },
+                        ],
+                      },
+                      initialValue: "camera",
+                    }),
+                    defineField({ name: "title", title: "Title", type: "string" }),
+                    defineField({
+                      name: "description",
+                      title: "Description",
+                      type: "text",
+                    }),
+                  ],
+                  preview: {
+                    select: { title: "title", subtitle: "description" },
+                  },
+                }),
+              ],
+            }),
+            defineField({
+              name: "processButton",
+              title: "Process Button",
+              type: "object",
+              fields: [
+                defineField({
+                  name: "text",
+                  title: "Button Text",
+                  type: "string",
+                }),
+                defineField({ name: "link", title: "Link", type: "string" }),
+              ],
+            }),
           ],
           preview: {
             select: { title: "title", subtitle: "description" },

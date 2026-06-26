@@ -1,3 +1,5 @@
+import type { ProcessStepData } from "./process";
+
 export type ServiceIconName =
   | "paintRoller"
   | "tiles"
@@ -43,6 +45,12 @@ export interface ServiceCardData {
     asset?: { url: string };
   };
   comparisonChecklist?: Array<{ _key: string; title: string }>;
+  processTitle?: string;
+  processSteps?: ProcessStepData[];
+  processButton?: {
+    text: string;
+    link: string;
+  };
 }
 
 export interface ServicesSectionData {

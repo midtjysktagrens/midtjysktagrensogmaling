@@ -164,7 +164,20 @@ export async function getServiceBySlug(
     comparisonChecklist[]{
       _key,
       title
-    }
+    },
+    processTitle,
+    processSteps[]{
+      _key,
+      title,
+      description,
+      icon{
+        asset->{
+          url
+        }
+      },
+      iconName
+    },
+    processButton
   }`;
 
   return await client.fetch(

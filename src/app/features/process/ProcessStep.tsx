@@ -24,7 +24,9 @@ export function ProcessStep({
 
   return (
     <div className="bg-[#2A384B] rounded-xl p-6 2xl:p-8 text-center flex flex-col items-center h-full w-full sm:flex-1 sm:w-auto sm:min-w-50 sm:max-w-64 2xl:max-w-80">
-      <span className="self-start text-white font-bold text-lg 2xl:text-xl">{step}</span>
+      <span className="self-start text-white font-bold text-lg 2xl:text-xl">
+        {step}
+      </span>
 
       {icon?.asset?.url ? (
         <Image
@@ -41,12 +43,14 @@ export function ProcessStep({
         />
       )}
 
-      <h3 className="text-white font-semibold text-lg 2xl:text-xl mt-4 min-h-14 flex items-center">
+      <h3 className="text-white font-semibold text-base 2xl:text-md mt-4 min-h-12 flex items-center line-clamp-2">
         {title}
       </h3>
 
       {description && (
-        <p className="text-white/60 text-sm 2xl:text-base mt-2">{description}</p>
+        <p className="text-white/60 text-xs 2xl:text-sm mt-2 min-h-20 line-clamp-5">
+          {description}
+        </p>
       )}
     </div>
   );
