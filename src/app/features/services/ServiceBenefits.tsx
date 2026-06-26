@@ -14,7 +14,7 @@ export function ServiceBenefits({
 
   return (
     <section className="bg-[#2A384B] py-16 min-h-[70vh] flex items-center">
-      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 grid lg:grid-cols-[3fr_2fr] gap-12 lg:gap-20 2xl:gap-28 items-center">
+      <div className="w-full max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 grid lg:grid-cols-[3fr_2fr] gap-12 lg:gap-32 2xl:gap-40 items-center">
         <div>
           <Heading
             size="md"
