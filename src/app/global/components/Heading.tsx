@@ -2,10 +2,12 @@ import type { ElementType, ReactNode } from "react";
 
 type HeadingSize = "sm" | "md" | "lg";
 type HeadingColor = "dark" | "light";
+type HeadingCase = "uppercase" | "lowercase" | "none";
 
 type HeadingProps = {
   size?: HeadingSize;
   color?: HeadingColor;
+  case?: HeadingCase;
   as?: ElementType;
   className?: string;
   children: ReactNode;
@@ -22,16 +24,23 @@ const colorClasses: Record<HeadingColor, string> = {
   light: "text-white",
 };
 
+const caseClasses: Record<HeadingCase, string> = {
+  uppercase: "uppercase",
+  lowercase: "lowercase",
+  none: "normal-case",
+};
+
 export function Heading({
   size = "md",
   color = "dark",
+  case: textCase = "uppercase",
   as: Tag = "h2",
   className,
   children,
 }: HeadingProps) {
   return (
     <Tag
-      className={`${colorClasses[color]} font-extrabold uppercase tracking-tight ${sizeClasses[size]} ${className ?? ""}`}
+      className={`${colorClasses[color]} font-extrabold tracking-tight ${caseClasses[textCase]} ${sizeClasses[size]} ${className ?? ""}`}
     >
       {children}
     </Tag>
