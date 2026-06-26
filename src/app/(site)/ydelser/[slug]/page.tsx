@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
 import { getServiceBySlug, getServiceSlugs } from "../../../lib/sanity/queries";
-import { ServiceBenefits, ServiceHero } from "../../../features/services";
+import {
+  ServiceBenefits,
+  ServiceComparison,
+  ServiceHero,
+} from "../../../features/services";
 
 export async function generateStaticParams() {
   const slugs = await getServiceSlugs();
@@ -23,6 +27,7 @@ export default async function ServicePage({ params }: Props) {
     <div>
       <ServiceHero {...service} />
       <ServiceBenefits {...service} />
+      <ServiceComparison {...service} />
     </div>
   );
 }

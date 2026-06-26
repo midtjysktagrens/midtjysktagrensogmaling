@@ -149,7 +149,22 @@ export async function getServiceBySlug(
       title
     },
     benefitsPrimaryButton,
-    benefitsSecondaryButton
+    benefitsSecondaryButton,
+    comparisonTitle,
+    comparisonBeforeImage{
+      asset->{
+        url
+      }
+    },
+    comparisonAfterImage{
+      asset->{
+        url
+      }
+    },
+    comparisonChecklist[]{
+      _key,
+      title
+    }
   }`;
 
   return await client.fetch(

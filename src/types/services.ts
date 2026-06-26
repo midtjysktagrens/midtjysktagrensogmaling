@@ -35,6 +35,14 @@ export interface ServiceCardData {
     text: string;
     link: string;
   };
+  comparisonTitle?: string;
+  comparisonBeforeImage?: {
+    asset?: { url: string };
+  };
+  comparisonAfterImage?: {
+    asset?: { url: string };
+  };
+  comparisonChecklist?: Array<{ _key: string; title: string }>;
 }
 
 export interface ServicesSectionData {

@@ -159,6 +159,45 @@ export const servicesSection = defineType({
                 defineField({ name: "link", title: "Link", type: "string" }),
               ],
             }),
+            defineField({
+              name: "comparisonTitle",
+              title: "Before & After Title",
+              description:
+                "Title for the before/after comparison section on the service's own page.",
+              type: "string",
+            }),
+            defineField({
+              name: "comparisonBeforeImage",
+              title: "Before Image",
+              type: "image",
+              options: { hotspot: true },
+            }),
+            defineField({
+              name: "comparisonAfterImage",
+              title: "After Image",
+              type: "image",
+              options: { hotspot: true },
+            }),
+            defineField({
+              name: "comparisonChecklist",
+              title: "Before & After Checklist",
+              type: "array",
+              of: [
+                defineArrayMember({
+                  type: "object",
+                  fields: [
+                    defineField({
+                      name: "title",
+                      title: "Item Title",
+                      type: "string",
+                    }),
+                  ],
+                  preview: {
+                    select: { title: "title" },
+                  },
+                }),
+              ],
+            }),
           ],
           preview: {
             select: { title: "title", subtitle: "description" },
