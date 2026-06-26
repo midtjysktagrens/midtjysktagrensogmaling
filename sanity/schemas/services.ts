@@ -102,6 +102,63 @@ export const servicesSection = defineType({
                 defineField({ name: "link", title: "Link", type: "string" }),
               ],
             }),
+            defineField({
+              name: "benefitsTitle",
+              title: "Benefits Title",
+              description: "Title for the benefits section on the service's own page.",
+              type: "string",
+            }),
+            defineField({
+              name: "benefitsDescription",
+              title: "Benefits Description",
+              type: "text",
+            }),
+            defineField({
+              name: "benefitsChecklist",
+              title: "Benefits Checklist",
+              type: "array",
+              of: [
+                defineArrayMember({
+                  type: "object",
+                  fields: [
+                    defineField({
+                      name: "title",
+                      title: "Item Title",
+                      type: "string",
+                    }),
+                  ],
+                  preview: {
+                    select: { title: "title" },
+                  },
+                }),
+              ],
+            }),
+            defineField({
+              name: "benefitsPrimaryButton",
+              title: "Benefits Primary Button",
+              type: "object",
+              fields: [
+                defineField({
+                  name: "text",
+                  title: "Button Text",
+                  type: "string",
+                }),
+                defineField({ name: "link", title: "Link", type: "string" }),
+              ],
+            }),
+            defineField({
+              name: "benefitsSecondaryButton",
+              title: "Benefits Secondary Button",
+              type: "object",
+              fields: [
+                defineField({
+                  name: "text",
+                  title: "Button Text",
+                  type: "string",
+                }),
+                defineField({ name: "link", title: "Link", type: "string" }),
+              ],
+            }),
           ],
           preview: {
             select: { title: "title", subtitle: "description" },

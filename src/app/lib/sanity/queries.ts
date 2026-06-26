@@ -141,7 +141,15 @@ export async function getServiceBySlug(
         url
       }
     },
-    button
+    button,
+    benefitsTitle,
+    benefitsDescription,
+    benefitsChecklist[]{
+      _key,
+      title
+    },
+    benefitsPrimaryButton,
+    benefitsSecondaryButton
   }`;
 
   return await client.fetch(

@@ -24,6 +24,17 @@ export interface ServiceCardData {
     text: string;
     link: string;
   };
+  benefitsTitle?: string;
+  benefitsDescription?: string;
+  benefitsChecklist?: Array<{ _key: string; title: string }>;
+  benefitsPrimaryButton?: {
+    text: string;
+    link: string;
+  };
+  benefitsSecondaryButton?: {
+    text: string;
+    link: string;
+  };
 }
 
 export interface ServicesSectionData {
