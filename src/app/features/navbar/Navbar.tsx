@@ -20,8 +20,8 @@ export default async function Navbar() {
             <Image
               src={navbar.logo.asset.url}
               alt={navbar.logo.alt ?? navbar.siteName ?? ""}
-              width={48}
-              height={48}
+              width={160}
+              height={160}
               className="h-10 w-auto"
             />
           )}
