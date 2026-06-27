@@ -17,18 +17,30 @@ export function CasesHero({
       <div className="absolute inset-0 flex">
         <div className="relative w-1/2 h-full">
           {leftUrl && (
-            <Image src={leftUrl} alt="" fill priority className="object-cover" />
+            <Image
+              src={leftUrl}
+              alt=""
+              fill
+              priority
+              className="object-cover"
+            />
           )}
         </div>
 
         <div className="relative w-1/2 h-full">
           {rightUrl && (
-            <Image src={rightUrl} alt="" fill priority className="object-cover" />
+            <Image
+              src={rightUrl}
+              alt=""
+              fill
+              priority
+              className="object-cover"
+            />
           )}
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-linear-to-r from-[#2A384B]/90 via-[#2A384B]/70 to-[#2A384B]/40" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#2A384B]/70 via-[#2A384B]/50 to-[#2A384B]/20" />
 
       <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="max-w-2xl 2xl:max-w-3xl text-white">

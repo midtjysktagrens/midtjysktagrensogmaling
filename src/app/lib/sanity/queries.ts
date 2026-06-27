@@ -387,6 +387,22 @@ export async function getCasesPage(): Promise<CasesPageData | null> {
       asset->{
         url
       }
+    },
+    serviceCaseSections[]{
+      _key,
+      serviceTitle,
+      cases[]{
+        _key,
+        title,
+        category,
+        image{
+          asset->{
+            url
+          }
+        },
+        facts,
+        testimonial
+      }
     }
   }`;
 

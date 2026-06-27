@@ -1,3 +1,11 @@
+import type { CaseItemData } from "./cases";
+
+export interface ServiceCaseSectionData {
+  _key: string;
+  serviceTitle?: string;
+  cases?: CaseItemData[];
+}
+
 export interface CasesPageData {
   heroTitle?: string;
   heroDescription?: string;
@@ -7,4 +15,5 @@ export interface CasesPageData {
   heroImageRight?: {
     asset?: { url: string };
   };
+  serviceCaseSections?: ServiceCaseSectionData[];
 }

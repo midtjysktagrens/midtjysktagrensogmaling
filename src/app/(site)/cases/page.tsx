@@ -1,4 +1,4 @@
-import { CasesHero } from "../../features/cases-page";
+import { CasesHero, CasesServiceSections } from "../../features/cases-page";
 import { getCasesPage } from "../../lib/sanity/queries";
 
 export default async function CasesPage() {
@@ -9,6 +9,7 @@ export default async function CasesPage() {
   return (
     <div>
       <CasesHero {...cases} />
+      <CasesServiceSections {...cases} />
     </div>
   );
 }
