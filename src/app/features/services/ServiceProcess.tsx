@@ -24,7 +24,9 @@ export function ServiceProcess({
         <div className="flex flex-wrap lg:flex-nowrap items-stretch justify-center gap-4">
           {processSteps.map((step, index) => (
             <Fragment key={step._key}>
-              <ProcessStep {...step} step={index + 1} />
+              <div className="flex flex-1">
+                <ProcessStep {...step} step={index + 1} />
+              </div>
 
               {index < processSteps.length - 1 && (
                 <div className="hidden lg:flex items-center justify-center shrink-0">
