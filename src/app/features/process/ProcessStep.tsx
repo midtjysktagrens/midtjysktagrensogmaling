@@ -43,12 +43,12 @@ export function ProcessStep({
         />
       )}
 
-      <h3 className="text-white font-semibold text-base 2xl:text-md mt-4 min-h-12 flex items-center line-clamp-2">
+      <h3 className="text-white font-semibold text-lg mt-4 min-h-12 flex items-center line-clamp-2">
         {title}
       </h3>
 
       {description && (
-        <p className="text-white/60 text-sm 2xl:text-sm mt-2 min-h-20 line-clamp-5">
+        <p className="text-white/60 text-sm 2xl:text-base mt-2 min-h-20 line-clamp-5">
           {description}
         </p>
       )}
