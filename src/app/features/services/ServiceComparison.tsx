@@ -43,7 +43,7 @@ export function ServiceComparison({
               {comparisonChecklist.map((item) => (
                 <li
                   key={item._key}
-                  className="flex items-center gap-4 text-[#2A384B] text-lg"
+                  className="flex items-center gap-4 text-[#2A384B] text-md"
                 >
                   <span className="w-7 h-7 rounded-full bg-[#2A384B] text-white flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4" strokeWidth={3} />

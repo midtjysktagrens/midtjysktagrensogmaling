@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/app/global/components/Button";
 import { Heading } from "@/app/global/components/Heading";
 import { ProcessStep } from "@/app/features/process";
@@ -23,17 +21,9 @@ export function ServiceProcess({
 
         <div className="flex flex-wrap lg:flex-nowrap items-stretch justify-center gap-4">
           {processSteps.map((step, index) => (
-            <Fragment key={step._key}>
-              <div className="flex flex-1">
-                <ProcessStep {...step} step={index + 1} />
-              </div>
-
-              {index < processSteps.length - 1 && (
-                <div className="hidden lg:flex items-center justify-center shrink-0">
-                  <ArrowRight className="w-6 h-6 2xl:w-8 2xl:h-8 text-gray-400" />
-                </div>
-              )}
-            </Fragment>
+            <div key={step._key} className="flex flex-1">
+              <ProcessStep {...step} step={index + 1} />
+            </div>
           ))}
         </div>
 
