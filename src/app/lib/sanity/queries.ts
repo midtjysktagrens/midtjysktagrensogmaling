@@ -2,6 +2,7 @@ import { client } from "@/app/studio/lib/client";
 import type { AboutPageData } from "@/types/about";
 import type { BeforeAfterSectionData } from "@/types/beforeAfter";
 import type { CasesSectionData } from "@/types/cases";
+import type { CasesPageData } from "@/types/casesPage";
 import type { ContactPageData } from "@/types/contactPage";
 import type { FooterData } from "@/types/footer";
 import type { HeroData } from "@/types/hero";
@@ -371,4 +372,23 @@ export async function getAboutPage(): Promise<AboutPageData | null> {
   }`;
 
   return await client.fetch(query, {}, { next: { tags: ["aboutPage"] } });
+}
+
+export async function getCasesPage(): Promise<CasesPageData | null> {
+  const query = `*[_type == "casesPage"][0]{
+    heroTitle,
+    heroDescription,
+    heroImageLeft{
+      asset->{
+        url
+      }
+    },
+    heroImageRight{
+      asset->{
+        url
+      }
+    }
+  }`;
+
+  return await client.fetch(query, {}, { next: { tags: ["casesPage"] } });
 }

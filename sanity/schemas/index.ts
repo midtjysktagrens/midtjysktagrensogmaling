@@ -1,6 +1,7 @@
 import { aboutPage } from "./aboutPage";
 import { beforeAfterSection } from "./beforeAfter";
 import { casesSection } from "./cases";
+import { casesPage } from "./casesPage";
 import { contactPage } from "./contactPage";
 import { footer } from "./footer";
 import { hero } from "./hero";
@@ -20,4 +21,5 @@ export const schemaTypes = [
   footer,
   contactPage,
   aboutPage,
+  casesPage,
 ];
