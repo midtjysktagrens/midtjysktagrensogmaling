@@ -1,11 +1,5 @@
 import { client } from "@/app/studio/lib/client";
-import type {
-  AboutCtaData,
-  AboutHeroData,
-  AboutTeamData,
-  AboutTimelineData,
-  AboutValuesData,
-} from "@/types/about";
+import type { AboutPageData } from "@/types/about";
 import type { BeforeAfterSectionData } from "@/types/beforeAfter";
 import type { CasesSectionData } from "@/types/cases";
 import type { ContactPageData } from "@/types/contactPage";
@@ -332,56 +326,35 @@ export async function getContactPage(): Promise<ContactPageData | null> {
   return await client.fetch(query, {}, { next: { tags: ["contactPage"] } });
 }
 
-export async function getAboutHero(): Promise<AboutHeroData | null> {
-  const query = `*[_type == "aboutHero"][0]{
-    eyebrow,
-    title,
-    description,
-    image{
+export async function getAboutPage(): Promise<AboutPageData | null> {
+  const query = `*[_type == "aboutPage"][0]{
+    heroEyebrow,
+    heroTitle,
+    heroDescription,
+    heroImage{
       asset->{
         url
       }
     },
-    primaryButton
-  }`;
-
-  return await client.fetch(query, {}, { next: { tags: ["aboutHero"] } });
-}
-
-export async function getAboutTimeline(): Promise<AboutTimelineData | null> {
-  const query = `*[_type == "aboutTimeline"][0]{
-    sectionTitle,
-    sectionDescription,
+    heroButton,
+    timelineTitle,
+    timelineDescription,
     milestones[]{
       _key,
       year,
       title,
       description
-    }
-  }`;
-
-  return await client.fetch(query, {}, { next: { tags: ["aboutTimeline"] } });
-}
-
-export async function getAboutValues(): Promise<AboutValuesData | null> {
-  const query = `*[_type == "aboutValues"][0]{
-    sectionTitle,
-    sectionDescription,
+    },
+    valuesTitle,
+    valuesDescription,
     values[]{
       _key,
       iconName,
       title,
       description
-    }
-  }`;
-
-  return await client.fetch(query, {}, { next: { tags: ["aboutValues"] } });
-}
-
-export async function getAboutTeam(): Promise<AboutTeamData | null> {
-  const query = `*[_type == "aboutTeam"][0]{
-    sectionTitle,
-    sectionDescription,
+    },
+    teamTitle,
+    teamDescription,
     members[]{
       _key,
       name,
@@ -391,18 +364,11 @@ export async function getAboutTeam(): Promise<AboutTeamData | null> {
           url
         }
       }
-    }
+    },
+    ctaHeading,
+    ctaDescription,
+    ctaButton
   }`;
 
-  return await client.fetch(query, {}, { next: { tags: ["aboutTeam"] } });
-}
-
-export async function getAboutCta(): Promise<AboutCtaData | null> {
-  const query = `*[_type == "aboutCta"][0]{
-    heading,
-    description,
-    button
-  }`;
-
-  return await client.fetch(query, {}, { next: { tags: ["aboutCta"] } });
+  return await client.fetch(query, {}, { next: { tags: ["aboutPage"] } });
 }

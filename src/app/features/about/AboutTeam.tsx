@@ -1,27 +1,27 @@
 import Image from "next/image";
 import { Heading } from "@/app/global/components/Heading";
-import { getAboutTeam } from "@/app/lib/sanity/queries";
+import type { AboutPageData } from "@/types/about";
 
-export default async function AboutTeam() {
-  const team = await getAboutTeam();
-
-  if (!team?.members?.length) return null;
+export function AboutTeam({
+  teamTitle,
+  teamDescription,
+  members,
+}: AboutPageData) {
+  if (!members?.length) return null;
 
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 text-center">
-        {team.sectionTitle && (
-          <Heading className="mb-4">{team.sectionTitle}</Heading>
-        )}
+        {teamTitle && <Heading className="mb-4">{teamTitle}</Heading>}
 
-        {team.sectionDescription && (
+        {teamDescription && (
           <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-            {team.sectionDescription}
+            {teamDescription}
           </p>
         )}
 
         <div className="flex flex-wrap justify-center gap-10">
-          {team.members.map((member) => {
+          {members.map((member) => {
             const photoUrl = member.photo?.asset?.url;
 
             return (

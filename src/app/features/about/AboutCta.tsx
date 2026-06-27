@@ -1,32 +1,30 @@
 import { Button } from "@/app/global/components/Button";
 import { Heading } from "@/app/global/components/Heading";
-import { getAboutCta } from "@/app/lib/sanity/queries";
+import type { AboutPageData } from "@/types/about";
 
-export default async function AboutCta() {
-  const cta = await getAboutCta();
-
-  if (!cta?.heading) return null;
+export function AboutCta({ ctaHeading, ctaDescription, ctaButton }: AboutPageData) {
+  if (!ctaHeading) return null;
 
   return (
     <section className="bg-[#2A384B] py-16">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 text-center">
         <Heading color="light" case="none" className="mb-4">
-          {cta.heading}
+          {ctaHeading}
         </Heading>
 
-        {cta.description && (
+        {ctaDescription && (
           <p className="text-white/80 max-w-2xl mx-auto mb-8">
-            {cta.description}
+            {ctaDescription}
           </p>
         )}
 
-        {cta.button?.text && (
+        {ctaButton?.text && (
           <Button
             variant="primary"
-            href={cta.button.link ?? "#"}
+            href={ctaButton.link ?? "#"}
             className="px-8 py-4 rounded-lg"
           >
-            {cta.button.text}
+            {ctaButton.text}
           </Button>
         )}
       </div>

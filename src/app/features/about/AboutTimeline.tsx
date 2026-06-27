@@ -1,28 +1,28 @@
 import { Heading } from "@/app/global/components/Heading";
-import { getAboutTimeline } from "@/app/lib/sanity/queries";
+import type { AboutPageData } from "@/types/about";
 
-export default async function AboutTimeline() {
-  const timeline = await getAboutTimeline();
-
-  if (!timeline?.milestones?.length) return null;
+export function AboutTimeline({
+  timelineTitle,
+  timelineDescription,
+  milestones,
+}: AboutPageData) {
+  if (!milestones?.length) return null;
 
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12">
-        {timeline.sectionTitle && (
-          <Heading className="mb-4">{timeline.sectionTitle}</Heading>
-        )}
+        {timelineTitle && <Heading className="mb-4">{timelineTitle}</Heading>}
 
-        {timeline.sectionDescription && (
+        {timelineDescription && (
           <p className="text-gray-600 max-w-2xl mb-16">
-            {timeline.sectionDescription}
+            {timelineDescription}
           </p>
         )}
 
         <ul className="relative">
           <div className="absolute left-1.5 lg:left-1/2 top-0 bottom-0 w-px bg-gray-200 lg:-translate-x-1/2" />
 
-          {timeline.milestones.map((milestone, index) => {
+          {milestones.map((milestone, index) => {
             const isEven = index % 2 === 1;
 
             return (

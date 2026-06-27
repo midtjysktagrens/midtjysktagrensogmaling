@@ -1,7 +1,6 @@
 import { Award, Clock, Heart, ShieldCheck } from "lucide-react";
 import { Heading } from "@/app/global/components/Heading";
-import { getAboutValues } from "@/app/lib/sanity/queries";
-import type { AboutValueIconName } from "@/types/about";
+import type { AboutPageData, AboutValueIconName } from "@/types/about";
 
 const presetIcons: Record<AboutValueIconName, typeof Award> = {
   quality: Award,
@@ -10,26 +9,24 @@ const presetIcons: Record<AboutValueIconName, typeof Award> = {
   care: Heart,
 };
 
-export default async function AboutValues() {
-  const values = await getAboutValues();
-
-  if (!values?.values?.length) return null;
+export function AboutValues({
+  valuesTitle,
+  valuesDescription,
+  values,
+}: AboutPageData) {
+  if (!values?.length) return null;
 
   return (
     <section className="bg-gray-200 py-16">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 lg:px-12">
-        {values.sectionTitle && (
-          <Heading className="mb-4">{values.sectionTitle}</Heading>
-        )}
+        {valuesTitle && <Heading className="mb-4">{valuesTitle}</Heading>}
 
-        {values.sectionDescription && (
-          <p className="text-gray-600 max-w-2xl mb-12">
-            {values.sectionDescription}
-          </p>
+        {valuesDescription && (
+          <p className="text-gray-600 max-w-2xl mb-12">{valuesDescription}</p>
         )}
 
         <div className="grid sm:grid-cols-2 gap-6">
-          {values.values.map((value) => {
+          {values.map((value) => {
             const Icon = presetIcons[value.iconName ?? "quality"];
 
             return (
