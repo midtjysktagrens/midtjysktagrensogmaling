@@ -21,7 +21,7 @@ export function ServiceProcess({
 
         <div className="flex flex-wrap lg:flex-nowrap items-stretch justify-center gap-4">
           {processSteps.map((step, index) => (
-            <div key={step._key} className="flex flex-1">
+            <div key={step._key} className="flex w-full sm:w-auto sm:flex-1">
               <ProcessStep {...step} step={index + 1} />
             </div>
           ))}
