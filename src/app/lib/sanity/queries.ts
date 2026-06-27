@@ -1,4 +1,11 @@
 import { client } from "@/app/studio/lib/client";
+import type {
+  AboutCtaData,
+  AboutHeroData,
+  AboutTeamData,
+  AboutTimelineData,
+  AboutValuesData,
+} from "@/types/about";
 import type { BeforeAfterSectionData } from "@/types/beforeAfter";
 import type { CasesSectionData } from "@/types/cases";
 import type { ContactPageData } from "@/types/contactPage";
@@ -323,4 +330,79 @@ export async function getContactPage(): Promise<ContactPageData | null> {
   }`;
 
   return await client.fetch(query, {}, { next: { tags: ["contactPage"] } });
+}
+
+export async function getAboutHero(): Promise<AboutHeroData | null> {
+  const query = `*[_type == "aboutHero"][0]{
+    eyebrow,
+    title,
+    description,
+    image{
+      asset->{
+        url
+      }
+    },
+    primaryButton
+  }`;
+
+  return await client.fetch(query, {}, { next: { tags: ["aboutHero"] } });
+}
+
+export async function getAboutTimeline(): Promise<AboutTimelineData | null> {
+  const query = `*[_type == "aboutTimeline"][0]{
+    sectionTitle,
+    sectionDescription,
+    milestones[]{
+      _key,
+      year,
+      title,
+      description
+    }
+  }`;
+
+  return await client.fetch(query, {}, { next: { tags: ["aboutTimeline"] } });
+}
+
+export async function getAboutValues(): Promise<AboutValuesData | null> {
+  const query = `*[_type == "aboutValues"][0]{
+    sectionTitle,
+    sectionDescription,
+    values[]{
+      _key,
+      iconName,
+      title,
+      description
+    }
+  }`;
+
+  return await client.fetch(query, {}, { next: { tags: ["aboutValues"] } });
+}
+
+export async function getAboutTeam(): Promise<AboutTeamData | null> {
+  const query = `*[_type == "aboutTeam"][0]{
+    sectionTitle,
+    sectionDescription,
+    members[]{
+      _key,
+      name,
+      role,
+      photo{
+        asset->{
+          url
+        }
+      }
+    }
+  }`;
+
+  return await client.fetch(query, {}, { next: { tags: ["aboutTeam"] } });
+}
+
+export async function getAboutCta(): Promise<AboutCtaData | null> {
+  const query = `*[_type == "aboutCta"][0]{
+    heading,
+    description,
+    button
+  }`;
+
+  return await client.fetch(query, {}, { next: { tags: ["aboutCta"] } });
 }

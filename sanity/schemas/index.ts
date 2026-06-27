@@ -1,3 +1,8 @@
+import { aboutCta } from "./aboutCta";
+import { aboutHero } from "./aboutHero";
+import { aboutTeam } from "./aboutTeam";
+import { aboutTimeline } from "./aboutTimeline";
+import { aboutValues } from "./aboutValues";
 import { beforeAfterSection } from "./beforeAfter";
 import { casesSection } from "./cases";
 import { contactPage } from "./contactPage";
@@ -18,4 +23,9 @@ export const schemaTypes = [
   casesSection,
   footer,
   contactPage,
+  aboutHero,
+  aboutTimeline,
+  aboutValues,
+  aboutTeam,
+  aboutCta,
 ];
