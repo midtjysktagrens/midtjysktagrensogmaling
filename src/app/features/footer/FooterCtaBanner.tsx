@@ -35,10 +35,13 @@ export function FooterCtaBanner({
               {ctaChecklist.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-3 text-white 2xl:text-lg"
+                  className="flex items-center gap-3 text-white text-sm lg:text-xl"
                 >
                   <span className="w-7 h-7 2xl:w-8 2xl:h-8 rounded-full bg-white text-[#4C80C2] flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4 2xl:w-5 2xl:h-5" strokeWidth={3} />
+                    <Check
+                      className="w-4 h-4 2xl:w-5 2xl:h-5"
+                      strokeWidth={3}
+                    />
                   </span>
                   {item}
                 </li>

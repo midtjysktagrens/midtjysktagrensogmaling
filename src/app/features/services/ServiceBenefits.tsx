@@ -54,7 +54,7 @@ export function ServiceBenefits({
             {benefitsChecklist.map((item) => (
               <li
                 key={item._key}
-                className="flex items-center gap-4 text-white text-md"
+                className="flex items-center gap-4 text-white text-sm lg:text-xl"
               >
                 <span className="w-7 h-7 rounded-full bg-white text-blue-500 flex items-center justify-center shrink-0">
                   <Check className="w-4 h-4" strokeWidth={3} />
