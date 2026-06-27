@@ -23,10 +23,10 @@ export function BeforeAfterSlider({
   };
 
   return (
-    <div className="relative">
+    <div className="relative sm:px-14 lg:px-16">
       <div
         ref={scrollRef}
-        className="flex items-start gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 -mx-6 px-6 lg:-mx-12 lg:px-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex items-start gap-6 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 scrollbar-none"
       >
         {items.map((item) => (
           <div
@@ -43,7 +43,7 @@ export function BeforeAfterSlider({
         type="button"
         aria-label="Forrige"
         onClick={() => scrollByCard(-1)}
-        className="hidden sm:flex absolute left-0 top-[40%] -translate-y-1/2 -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-900 shadow-lg cursor-pointer hover:bg-[#4C80C2] hover:text-white transition-colors"
+        className="hidden sm:flex absolute left-0 top-[40%] -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-900 shadow-lg cursor-pointer hover:bg-[#4C80C2] hover:text-white transition-colors"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
@@ -52,7 +52,7 @@ export function BeforeAfterSlider({
         type="button"
         aria-label="Næste"
         onClick={() => scrollByCard(1)}
-        className="hidden sm:flex absolute right-0 top-[40%] -translate-y-1/2 translate-x-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-900 shadow-lg cursor-pointer hover:bg-[#4C80C2] hover:text-white transition-colors"
+        className="hidden sm:flex absolute right-0 top-[40%] -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-white text-gray-900 shadow-lg cursor-pointer hover:bg-[#4C80C2] hover:text-white transition-colors"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
