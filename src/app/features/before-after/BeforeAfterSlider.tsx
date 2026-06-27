@@ -26,7 +26,7 @@ export function BeforeAfterSlider({
     <div className="relative sm:px-14 lg:px-16">
       <div
         ref={scrollRef}
-        className="flex items-start gap-6 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 scrollbar-none"
+        className="flex items-start gap-6 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 scrollbar-none -mx-6 px-6 scroll-pl-6 sm:mx-0 sm:px-0 sm:scroll-pl-0"
       >
         {items.map((item) => (
           <div
