@@ -4,6 +4,7 @@ import { Hero } from "../features/hero";
 import { Kpi } from "../features/kpi";
 import { Process } from "../features/process";
 import { Services } from "../features/services";
+//test
 
 export default function Home() {
   return (
